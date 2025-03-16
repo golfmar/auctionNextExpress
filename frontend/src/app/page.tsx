@@ -40,7 +40,11 @@ const HomePage = () => {
             displays bid history and timer, updated via `bidUpdated`. <br />-{" "}
             <strong>Profile:</strong> Page `/profile` requests data via
             `getProfileData` (Socket.IO), shows user data from Redux and auction
-            lists (created, bids, won). <br />
+            lists (created, bids, won). After logging in, the user is provided
+            with the ability to place bids, view bids on the lot page, and
+            receive notifications in case of winning. The user's activity is
+            displayed on their profile page.
+            <br />
             <strong>Features:</strong> Real-time via Socket.IO, JWT
             authorization, TypeScript, modular components (`Lot`, `Profile`).{" "}
             <br />
