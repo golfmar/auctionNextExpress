@@ -116,33 +116,7 @@ const Auctions: React.FC = () => {
     console.log("<====closedAuction====>", closedAuction);
   }, [closedAuction, auctions]);
 
-  // useEffect(() => {
-  //   if (!socket) return; // Ждем, пока socket будет готов
-  //   const handleAuctionClosed = (data: {
-  //     auctionId: string;
-  //     winner?: { user: string; amount: number };
-  //   }) => {
-  //     dispatch(
-  //       updateAuctionStatus({
-  //         id: data.auctionId,
-  //         status: "ended",
-  //         winner: data.winner,
-  //       })
-  //     );
-  //     const endedAuction = auctions.find((a) => a._id === data.auctionId);
-  //     if (endedAuction) {
-  //       setClosedAuction({
-  //         ...endedAuction,
-  //         status: "ended",
-  //         winner: data.winner?.user,
-  //       });
-  //     }
-  //   };
-  //   socket.on("auctionClosed", handleAuctionClosed);
-  //   return () => {
-  //     socket.off("auctionClosed", handleAuctionClosed);
-  //   };
-  // }, [dispatch, socket, auctions]);
+
 
   const [currentPage, setCurrentPage] = useState<number>(1);
   const itemsPerPage = 5;
