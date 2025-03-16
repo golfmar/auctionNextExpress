@@ -201,16 +201,20 @@ const Auctions: React.FC = () => {
         Auction List
       </h1>
       {currentAuctions.length > 0 ? (
-        <div className="mt-3 grid grid-rows-2 gap-2 md:flex md:gap-4">
-          <div className="flex gap-2 items-center md:flex-col">
-            <h3 className="italic">Sorting by creation date:</h3>
+        <div className="mt-3 flex  gap-2  justify-center md:gap-4">
+          <div className="flex gap-2 flex-col items-center md:flex-col">
+            <h3 className="text-center text-[14px] md:text-[16px] italic">
+              Sorting by creation date:
+            </h3>
             <Select
               setSortOrder={handleSortOrderChange}
               selectItems={selectItems}
             />
           </div>
-          <div className="flex gap-2 items-center md:flex-col">
-            <h3 className="italic">Sorting by end date:</h3>
+          <div className="flex flex-col gap-2 items-center md:flex-col">
+            <h3 className="italic text-center text-[14px] md:text-[16px]">
+              Sorting by end date:
+            </h3>
             <Select
               setSortOrder={handleSortOrderEndTimeChange}
               selectItems={selectItems}
@@ -219,7 +223,7 @@ const Auctions: React.FC = () => {
         </div>
       ) : null}
 
-      <ul className="mt-4 grid md:grid-cols-[repeat(auto-fill,minmax(410px,1fr))] gap-4 justify-center">
+      <ul className="mt-4 grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))]  md:grid-cols-[repeat(auto-fill,minmax(410px,1fr))] gap-4 justify-center justify-items-center">
         {currentAuctions.length > 0 ? (
           currentAuctions.map((auction) => (
             <Lot key={auction._id} auction={auction} />

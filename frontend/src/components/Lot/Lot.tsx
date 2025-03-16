@@ -139,7 +139,23 @@ const Lot: React.FC<LotProps> = ({ auction }) => {
   }, [socket]);
 
   return (
-    <li className="bg-white shadow-[0_0_8px_rgba(0,0,0,0.2)] rounded-xl p-6 flex flex-col gap-6 md:flex-row md:items-center min-w-[410px]">
+    <li
+      className="
+    bg-white 
+    shadow-[0_0_8px_rgba(0,0,0,0.2)] 
+    rounded-xl 
+    p-6 
+    flex 
+    flex-col 
+    items-center  
+    gap-6 
+    md:grid 
+    md:grid-cols-2
+    md:items-center 
+    w-full  
+    md:min-w-[410px]
+    "
+    >
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-lg">
@@ -178,11 +194,14 @@ const Lot: React.FC<LotProps> = ({ auction }) => {
         </div>
       )}
       {auction.imageUrl ? (
-        <Link href={`/auctions/${auction._id}`}>
+        <Link
+          href={`/auctions/${auction._id}`}
+          className="grid place-items-center"
+        >
           <img
             src={auction.imageUrl}
             alt={auction.title}
-            className="w-40 h-40 object-cover rounded-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
+            className="w-60 h-60 object-cover rounded-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
           />
         </Link>
       ) : (

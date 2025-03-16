@@ -5,11 +5,12 @@
   border: 1px solid #959595;
   border-radius: 5px;
   transition: all 0.2s ease-in-out;
-  
+
   * {
     transition: all 0.2s ease-in-out;
+    font-size: 14px;
   }
-  
+
   .dropdown-button {
     position: relative;
     display: block;
@@ -21,9 +22,9 @@
     padding: 5px 25px 5px 5px;
     z-index: 25;
     cursor: pointer;
-    
+
     svg {
-      
+
       width: 12px;
       height: 12px;
       position: absolute;
@@ -34,7 +35,7 @@
       stroke: black;
     }
   }
-  
+
   .dropdown-list {
     position: absolute;
     top: 35px;
@@ -46,72 +47,72 @@
     transform: scaleY(0);
     transform-origin: top;
   }
-  
+
   .dropdown-list__item {
     padding: 5px;
     border-bottom: 1px solid $success;
     cursor: pointer;
     background: white;
-    
+
     &:last-child {
       border: none;
     }
-    
+
     &:hover {
       background: #b4b4b4;
     }
   }
-  
+
   &._is-active {
     border-color: $success;
-    
+
     .dropdown-list {
       z-index: 100;
     }
-    
+
     span {
       color: $success;
     }
-    
+
     & .dropdown-button svg {
       stroke: $success;
       transform: translate(0%, -50%) rotate(180deg);
     }
-    
+
     .dropdown-list {
       border: 1px solid $success;
       transform: scaleY(1);
     }
   }
-  
+
   &._is-filled {
     border-color: $success;
-    
+
     .dropdown-button {
       background: $success;
-      
+
       span {
         color: white;
         opacity: 1;
       }
-      
+
       svg {
         opacity: 1;
         stroke: white;
       }
     }
-    
+
     &:hover {
       border-color: #114566;
-      
+
       .dropdown-button {
         background: $success;
-        
+
         span {
           color: white;
           opacity: 1;
         }
-        
+
         svg {
           opacity: 1;
           stroke: white;
@@ -119,20 +120,20 @@
       }
     }
   }
-  
+
   &:hover {
     border-color: $success;
-    
+
     .dropdown-button {
       span {
         color: $success;
       }
-      
+
       svg {
         stroke: $success;
       }
     }
   }
-  
-  
+
+
 }
