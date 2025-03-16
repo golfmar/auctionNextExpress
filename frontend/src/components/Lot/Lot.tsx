@@ -92,9 +92,6 @@ const Lot: React.FC<LotProps> = ({ auction }) => {
       setError("Please log in to place a bid");
       return;
     }
-    console.log("===== auction._id=====", auction._id);
-    console.log("=====bidAmount=====", bidAmount);
-    console.log("===== token=====", token);
     if (socket) {
       socket.emit("placeBid", {
         auctionId: auction._id,
@@ -124,7 +121,7 @@ const Lot: React.FC<LotProps> = ({ auction }) => {
   return (
     <li
       key={auction._id}
-      className="bg-white shadow-[0_0_8px_rgba(0,0,0,0.2)] rounded-xl p-6 flex flex-col gap-6 hover:shadow-lg transition-shadow duration-300   md:flex-row md:items-center min-w-[410px] "
+      className="bg-white shadow-[0_0_8px_rgba(0,0,0,0.2)] rounded-xl p-6 flex flex-col gap-6    md:flex-row md:items-center min-w-[410px] "
     >
       {/* Модальное окно */}
       {isModalOpen && (
