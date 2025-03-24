@@ -52,7 +52,8 @@ app.get("/auth/google/callback", async (req, res) => {
       code,
       client_id: process.env.GOOGLE_CLIENT_ID,
       client_secret: process.env.GOOGLE_CLIENT_SECRET,
-      redirect_uri: "http://localhost:5000/auth/google/callback",
+      redirect_uri:
+        "http://auctionnextexpress-production.up.railway.app/auth/google/callback",
       grant_type: "authorization_code",
     });
     const { access_token, id_token } = response.data;
@@ -78,7 +79,9 @@ app.get("/auth/google/callback", async (req, res) => {
       process.env.JWT_SECRET,
       { expiresIn: "10h" }
     );
-    res.redirect(`http://localhost:3000/dashboard?token=${jwtToken}`);
+    res.redirect(
+      `http://https://auction-next-express.vercel.app/dashboard?token=${jwtToken}`
+    );
   } catch (error) {
     console.error("Google callback error:", error);
     res.status(500).send("Authentication failed");
