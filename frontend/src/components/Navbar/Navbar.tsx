@@ -125,15 +125,6 @@ const Navbar: React.FC = () => {
           ) : (
             ""
           )}
-          <li>
-            <Link
-              href="/ui"
-              className="text-white hover:text-gray-300"
-              onClick={() => setIsOpen(false)}
-            >
-              UI kit
-            </Link>
-          </li>
         </ul>
       </div>
     </nav>
