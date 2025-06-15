@@ -19,6 +19,7 @@ const Navbar: React.FC = () => {
   const dispatch = useDispatch();
   const user = useSelector((state: any) => state.auth.user as User);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
   const handleLogout = () => {
     if (user) {
       localStorage.removeItem("user");
